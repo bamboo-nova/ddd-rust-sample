@@ -4,6 +4,7 @@ use serde::{Serialize, Deserialize};
 pub struct User {
     pub id: String,
     pub name: String,
+    pub score: Option<u32>,
 }
 
 impl User {
@@ -11,6 +12,13 @@ impl User {
         Self {
             id: id.into(),
             name: name.into(),
+            score: None,
         }
+    }
+
+    pub fn with_score(&self, score: u32) -> Self {
+        let mut updated = self.clone();
+        updated.score = Some(score);
+        updated
     }
 }

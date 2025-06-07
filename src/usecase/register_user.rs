@@ -1,6 +1,6 @@
 use crate::domain::user::User;
 use crate::repository::user_repository::UserRepository;
-use crate::services::service_user::InMemoryUserRepository;
+// use crate::services::service_user::InMemoryUserRepository;
 
 pub struct RegisterUserUseCase<R: UserRepository> {
     repo: R,
